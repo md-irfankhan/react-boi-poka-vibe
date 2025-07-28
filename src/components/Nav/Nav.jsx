@@ -1,11 +1,13 @@
+import { NavLink,Link } from "react-router";
+import './Nav.css'
 const Nav = () => {
 
     const links=<>
-    <li className="px-2">Home</li>
-    <li>Listed Books</li>
+    <li className="px-2"><NavLink to='/'>Home</NavLink></li>
+    <li><NavLink to='/read'>Listed Books</NavLink></li>
     </>
     return (
-        <nav className="navbar bg-base-100">
+        <nav className="navbar bg-base-100/[0.7] backdrop-blur-2xl sticky top-0 z-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -17,7 +19,7 @@ const Nav = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Boi Poka</a>
+                <Link to={'/'} className="btn btn-ghost text-xl">Boi Poka</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

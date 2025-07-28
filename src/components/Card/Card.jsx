@@ -1,8 +1,10 @@
 
 import { AiOutlineStar } from 'react-icons/ai';
+import { Link } from 'react-router';
 const Card = ({book}) => {
-    const {bookName,author,image,tags,category,rating}=book;
+    const {bookId,bookName,author,image,tags,category,rating}=book;
     return (
+        <Link to={`/book/${bookId}`}>
         <div className="card bg-base-100 w-96 shadow-sm px-3 pt-3">
             <figure className="bg-base-300 py-3 ">
                 <img className="h-30"
@@ -37,6 +39,7 @@ const Card = ({book}) => {
                 
             </div>
         </div>
+        </Link>
     );
 };
 

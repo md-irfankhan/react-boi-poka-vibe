@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router";
+import { addReadData } from "../../DB/db";
 
 
 const Book = () => {
@@ -7,7 +8,12 @@ const Book = () => {
     const books = useLoaderData()
     console.log(books)
     const book = books.find(book => book.bookId == bookId)
-    const { bookName, author, image,category,review ,tags,totalPages,publisher,yearOfPublishing,rating} = book
+    const { bookName, author, image,category,review ,tags,totalPages,publisher,yearOfPublishing,rating} = book;
+
+    const handleRead=(id)=>{
+        addReadData(id);
+        
+    }
     return (
         <div className="hero w-full  min-h-screen">
             <div className="hero-content w-full gap-4 flex-col lg:flex-row">
@@ -51,7 +57,7 @@ const Book = () => {
                             <p className="font-medium text-left">{rating}</p>
                         </div>
                     </div>
-                    <button className="btn border mt-4 border-black/[0.1] bg-white font-bold">Read</button>
+                    <button onClick={()=>handleRead(bookId)} className="btn border mt-4 border-black/[0.1] bg-white font-bold">Read</button>
                     <button className="btn ml-2 mt-4 border text-white bg-[#50B1C9] border-black/[0.1] font-bold">Wishlist</button>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Books from '../../assets/books.jpg'
+import { Link } from 'react-router';
 const Banner = () => {
     return (
         <div className="hero bg-base-200 py-5 my-4">
@@ -11,7 +12,7 @@ const Banner = () => {
                 <div className='max-w-[400px] gap-3'>
                     <h1 className="text-5xl font-bold">Books to freshen up your bookshelf</h1>
                  
-                    <button className="btn my-3 bg-green-400 py-6 text-white text-2xl">View the list</button>
+                    <button className="btn my-3 bg-green-400 py-6 text-white text-2xl"><Link to='/read'>View the list</Link></button>
                 </div>
             </div>
         </div>
