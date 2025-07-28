@@ -4,12 +4,14 @@ import './App.css'
 import Nav from './components/Nav/Nav'
 
 function App() {
-  
+
 
   return (
     <>
-    <Nav></Nav>
-    <Outlet></Outlet>
+      <div className='max-w-[1250px] mx-auto'>
+        <Nav></Nav>
+        <Outlet></Outlet>
+      </div>
     </>
   )
 }
