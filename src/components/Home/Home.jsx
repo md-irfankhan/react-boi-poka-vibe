@@ -13,10 +13,13 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-y-2'>
-                {
-                    books.map(book => <Card book={book}></Card>)
-                }
+            <div>
+                <h1 className='text-center font-bold text-3xl my-1.5'>Books</h1>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-y-2'>
+                    {
+                        books.map(book => <Card book={book}></Card>)
+                    }
+                </div>
             </div>
         </div>
     );
