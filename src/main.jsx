@@ -14,8 +14,9 @@ import Error from './components/Error/Error.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    errorElement:<Error></Error>,
+    
     element: <App></App>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:'/',
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+ 
      <RouterProvider router={router} />
-  </StrictMode>,
+  ,
 )
