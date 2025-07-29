@@ -1,0 +1,14 @@
+[build]
+command = "npm run build"       # or "yarn build"
+publish = "dist"                # Vite/React default output folder
+
+[context.production.environment]
+NODE_VERSION = "v20.11.0"
+NPM_VERSION = "10.2.4"
+
+[context.deploy-preview]
+command = "npm run build"
+
+[context.deploy-preview.environment]
+NODE_VERSION = "v20.11.0"
+NPM_VERSION = "10.2.4"
