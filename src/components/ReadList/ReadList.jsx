@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { getReadData } from '../../DB/db';
+import { getReadData, getWishData } from '../../DB/db';
 import ListCard from '../ListCard/ListCard';
 
 const ReadList = () => {
@@ -9,6 +9,9 @@ const ReadList = () => {
     const ReadLS=getReadData()
     const ReadData=data.filter(idx=>ReadLS.includes(idx.bookId))
     console.log(ReadData);
+    const WishLS=getWishData()
+    const WishData=data.filter(idx=>WishLS.includes(idx.bookId))
+  
     
     return (
         <div>
@@ -24,7 +27,9 @@ const ReadList = () => {
                     }
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                      {
+                        WishData.map(book=><ListCard book={book}></ListCard>)
+                    }
                 </TabPanel>
             </Tabs>
         </div>
