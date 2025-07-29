@@ -24,12 +24,12 @@ const router = createBrowserRouter([
       },
       {
         path:'book/:bookId',
-        loader:()=>fetch('/public/api/booksData.json'),
+        loader:()=>fetch('/api/booksData.json'),
         element:<Book></Book>
       },
       {
         path:"/read",
-        loader:()=>fetch('/public/api/booksData.json'),
+        loader:()=>fetch('/api/booksData.json'),
         element:<ReadList></ReadList>
       }
     ]
